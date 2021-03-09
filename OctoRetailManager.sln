@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORMDataManager", "ORMDataManager\ORMDataManager.csproj", "{DA53770A-0394-48E7-B16F-A48127F372BC}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ORMData", "ORMData\ORMData.sqlproj", "{5A83DAE9-EC4B-411E-B225-BC5FDB681774}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORMDesktopUI", "ORMDesktopUI\ORMDesktopUI.csproj", "{D3FE17B4-BDFA-4AA0-8CC5-0C917B7F90DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,16 @@ Global
 		{DA53770A-0394-48E7-B16F-A48127F372BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA53770A-0394-48E7-B16F-A48127F372BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA53770A-0394-48E7-B16F-A48127F372BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A83DAE9-EC4B-411E-B225-BC5FDB681774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A83DAE9-EC4B-411E-B225-BC5FDB681774}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A83DAE9-EC4B-411E-B225-BC5FDB681774}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5A83DAE9-EC4B-411E-B225-BC5FDB681774}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A83DAE9-EC4B-411E-B225-BC5FDB681774}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A83DAE9-EC4B-411E-B225-BC5FDB681774}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D3FE17B4-BDFA-4AA0-8CC5-0C917B7F90DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3FE17B4-BDFA-4AA0-8CC5-0C917B7F90DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3FE17B4-BDFA-4AA0-8CC5-0C917B7F90DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3FE17B4-BDFA-4AA0-8CC5-0C917B7F90DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
