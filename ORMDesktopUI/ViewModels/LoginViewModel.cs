@@ -1,5 +1,5 @@
 ﻿using Caliburn.Micro;
-using ORMDesktopUI.Helpers;
+using ORMDesktopUI.Library.API;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -77,6 +77,7 @@ namespace ORMDesktopUI.ViewModels
                 {
                     output = true;
                 }
+                // return !String.IsNullOrEmpty(Username) && !String.IsNullOrEmpty(Password);
 
                 return output;
             }
@@ -88,6 +89,10 @@ namespace ORMDesktopUI.ViewModels
             {
                 ErrorMessage = "";
                 var result = await _apiHelper.Authenticate(UserName, Password);
+
+                // Capture more info about the user
+                await _apiHelper.GetLoggedInUserInfo(result.Access_Token);
+
             }
             catch (Exception ex)
             {

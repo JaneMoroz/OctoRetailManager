@@ -1,5 +1,7 @@
 ﻿using Caliburn.Micro;
 using ORMDesktopUI.Helpers;
+using ORMDesktopUI.Library.API;
+using ORMDesktopUI.Library.Models;
 using ORMDesktopUI.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -31,7 +33,9 @@ namespace ORMDesktopUI
             _container
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>()
+                .Singleton<ILoggedInUserModel, LoggedInUserModel>()
                 .Singleton<IAPIHelper, APIHelper>();
+
 
             GetType().Assembly.GetTypes()
                 .Where(type => type.IsClass)
