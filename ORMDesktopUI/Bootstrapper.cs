@@ -1,6 +1,7 @@
 ﻿using Caliburn.Micro;
 using ORMDesktopUI.Helpers;
 using ORMDesktopUI.Library.API;
+using ORMDesktopUI.Library.Helpers;
 using ORMDesktopUI.Library.Models;
 using ORMDesktopUI.ViewModels;
 using System;
@@ -35,6 +36,7 @@ namespace ORMDesktopUI
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>()
                 .Singleton<ILoggedInUserModel, LoggedInUserModel>()
+                .Singleton<IConfigHelper, ConfigHelper>()
                 .Singleton<IAPIHelper, APIHelper>();
 
 
