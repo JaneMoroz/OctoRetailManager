@@ -1,4 +1,6 @@
 ﻿using Caliburn.Micro;
+using ORMDesktopUI.Library.API;
+using ORMDesktopUI.Library.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,9 +12,28 @@ namespace ORMDesktopUI.ViewModels
 {
     public class SalesViewModel : Screen
     {
-        private BindingList<string> _products;
+        private IProductEndPoint _productEndPoint;
+        public SalesViewModel(IProductEndPoint productEndPoint)
+        {
+            _productEndPoint = productEndPoint;
+        }
 
-        public BindingList<string> Products
+        protected override async void OnViewLoaded(object view)
+        {
+            base.OnViewLoaded(view);
+            await LoadProducts();
+        }
+
+        private async Task LoadProducts()
+        {
+
+            var productList = await _productEndPoint.GetAll();
+            Products = new BindingList<ProductModel>(productList);
+        }
+
+        private BindingList<ProductModel> _products;
+
+        public BindingList<ProductModel> Products
         {
             get { return _products; }
             set 
@@ -22,9 +43,9 @@ namespace ORMDesktopUI.ViewModels
             }
         }
 
-        private BindingList<string> _cart;
+        private BindingList<ProductModel> _cart;
 
-        public BindingList<string> Cart
+        public BindingList<ProductModel> Cart
         {
             get { return _cart; }
             set 
