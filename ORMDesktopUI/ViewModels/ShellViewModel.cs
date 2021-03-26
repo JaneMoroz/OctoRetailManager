@@ -12,17 +12,16 @@ namespace ORMDesktopUI.ViewModels
     {
         private IEventAggregator _events;
         private SalesViewModel _salesVM;
-        private SimpleContainer _container;
 
-        public ShellViewModel(IEventAggregator events, SalesViewModel salesVM, SimpleContainer container)
+        public ShellViewModel(IEventAggregator events, SalesViewModel salesVM)
         {
 
             _events = events;
             _salesVM = salesVM;
-            _container = container;
             _events.Subscribe(this);
             
-            ActivateItem(_container.GetInstance<LoginViewModel>());
+            //IoC allows to talk to the container to get an instance, no need to pass the container around
+            ActivateItem(IoC.Get<LoginViewModel>());
         }
 
         public void Handle(LogOnEvent message)
