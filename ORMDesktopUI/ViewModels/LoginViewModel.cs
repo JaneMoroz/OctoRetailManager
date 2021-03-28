@@ -11,8 +11,8 @@ namespace ORMDesktopUI.ViewModels
 {
     public class LoginViewModel : Screen
     {
-        private string _userName;
-        private string _password;
+        private string _userName = "jmoroz@mail.com";
+        private string _password = "Moroz12345!";
         private IAPIHelper _apiHelper;
         private IEventAggregator _events;
 
