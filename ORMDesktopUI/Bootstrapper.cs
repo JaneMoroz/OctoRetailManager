@@ -1,8 +1,10 @@
-﻿using Caliburn.Micro;
+﻿using AutoMapper;
+using Caliburn.Micro;
 using ORMDesktopUI.Helpers;
 using ORMDesktopUI.Library.API;
 using ORMDesktopUI.Library.Helpers;
 using ORMDesktopUI.Library.Models;
+using ORMDesktopUI.Models;
 using ORMDesktopUI.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -27,8 +29,23 @@ namespace ORMDesktopUI
             "PasswordChanged");
         }
 
+        private IMapper ConfigureAutomapper()
+        {
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<ProductModel, ProductDisplayModel>();
+                cfg.CreateMap<CartItemModel, CartItemDisplayModel>();
+            });
+
+            var output = config.CreateMapper();
+
+            return output;
+        }
+
         protected override void Configure()
         {
+            _container.Instance(ConfigureAutomapper());
+
             _container.Instance(_container)
                 .PerRequest<IProductEndPoint, ProductEndPoint>()
                 .PerRequest<ISaleEndpoint, SaleEndpoint>();

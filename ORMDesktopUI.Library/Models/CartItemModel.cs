@@ -10,17 +10,5 @@ namespace ORMDesktopUI.Library.Models
     {
         public ProductModel Product { get; set; }
         public int QuantityInCart { get; set; }
-        public string DisplayText 
-        { 
-            get
-            {
-                if (QuantityInCart > 1)
-                {
-                    return $"{Product.ProductName} ({QuantityInCart})";
-                }
-                else
-                    return $"{Product.ProductName}";
-            }
-        }
     }
 }
