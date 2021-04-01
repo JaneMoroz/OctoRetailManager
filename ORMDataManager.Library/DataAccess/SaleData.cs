@@ -52,20 +52,35 @@ namespace ORMDataManager.Library.DataAccess
 
             sale.Total = sale.SubTotal + sale.Tax;
 
-            // Save the sale model
-            SqlDataAccess sql = new SqlDataAccess();
-            sql.SaveData("dbo.spSale_Insert", sale, "ORMData");
-
-            // Get the ID from the sale model
-            sale.Id = sql.LoadData<int, dynamic>("dbo.spSale_Lookup", new { CashierId = sale.CashierId, SaleDate = sale.SaleDate }, "ORMData").FirstOrDefault();
-
-            // Finish filling in the sale detail model
-            foreach (var item in details)
+            
+            using(SqlDataAccess sql = new SqlDataAccess())
             {
-                item.SaleId = sale.Id;
-                // Save the sale detail model
-                sql.SaveData("dbo.spSaleDetail_Insert", item, "ORMData");
-            }
+                try
+                {
+                    sql.StartTransaction("ORMData");
+
+                    // Save the sale model
+                    sql.SaveDataInTransaction("dbo.spSale_Insert", sale);
+
+                    // Get the ID from the sale model
+                    sale.Id = sql.LoadDataInTransaction<int, dynamic>("dbo.spSale_Lookup", new { CashierId = sale.CashierId, SaleDate = sale.SaleDate }).FirstOrDefault();
+
+                    // Finish filling in the sale detail model
+                    foreach (var item in details)
+                    {
+                        item.SaleId = sale.Id;
+                        // Save the sale detail model
+                        sql.SaveDataInTransaction("dbo.spSaleDetail_Insert", item);
+                    }
+
+                    sql.CommitTransaction();
+                }
+                catch
+                {
+                    sql.RollbackTransaction();
+                    throw;
+                }
+            } 
         }
     }
 }
