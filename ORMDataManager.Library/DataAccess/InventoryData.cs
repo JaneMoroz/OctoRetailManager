@@ -12,6 +12,10 @@ namespace ORMDataManager.Library.DataAccess
     public class InventoryData
     {
         private readonly IConfiguration _config;
+        public InventoryData()
+        {
+
+        }
 
         public InventoryData(IConfiguration config)
         {

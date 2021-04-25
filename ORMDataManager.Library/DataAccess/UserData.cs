@@ -13,6 +13,10 @@ namespace ORMDataManager.Library.DataAccess
     {
         private readonly IConfiguration _config;
 
+        public UserData()
+        {
+
+        }
         public UserData(IConfiguration config)
         {
             _config = config;
