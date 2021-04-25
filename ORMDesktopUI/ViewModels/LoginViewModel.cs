@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace ORMDesktopUI.ViewModels
 {
@@ -97,7 +98,7 @@ namespace ORMDesktopUI.ViewModels
                 // Capture more info about the user
                 await _apiHelper.GetLoggedInUserInfo(result.Access_Token);
 
-                _events.PublishOnUIThread(new LogOnEvent());
+                await _events.PublishOnUIThreadAsync(new LogOnEvent(), new CancellationToken());
 
             }
             catch (Exception ex)
