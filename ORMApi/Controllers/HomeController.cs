@@ -30,7 +30,7 @@ namespace ORMApi.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Privacy()
+        public IActionResult Privacy()
         {
             //string[] roles = { "Cashier", "Manager", "Admin" };
             //foreach (var role in roles)
