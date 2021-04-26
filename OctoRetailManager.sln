@@ -7,11 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORMDataManager", "ORMDataMa
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ORMData", "ORMData\ORMData.sqlproj", "{5A83DAE9-EC4B-411E-B225-BC5FDB681774}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORMDesktopUI", "ORMDesktopUI\ORMDesktopUI.csproj", "{D3FE17B4-BDFA-4AA0-8CC5-0C917B7F90DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ORMDesktopUI", "ORMDesktopUI\ORMDesktopUI.csproj", "{D3FE17B4-BDFA-4AA0-8CC5-0C917B7F90DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORMDataManager.Library", "ORMDataManager.Library\ORMDataManager.Library.csproj", "{F997821C-727A-4961-8063-D1F0D4D92362}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ORMDataManager.Library", "ORMDataManager.Library\ORMDataManager.Library.csproj", "{F997821C-727A-4961-8063-D1F0D4D92362}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORMDesktopUI.Library", "ORMDesktopUI.Library\ORMDesktopUI.Library.csproj", "{E0BFD451-DBD5-4BF7-B012-4F3F5BD106F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ORMDesktopUI.Library", "ORMDesktopUI.Library\ORMDesktopUI.Library.csproj", "{E0BFD451-DBD5-4BF7-B012-4F3F5BD106F6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{CD2F3C6B-FC4E-4622-92B4-61B2421FAC17}"
 EndProject
@@ -19,7 +19,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{4E8724DA-3C1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{038468F4-1F83-4075-9B89-CDAD7B998E1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORMApi", "ORMApi\ORMApi.csproj", "{DA686DFA-1506-4EBE-8366-6462867F20ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ORMApi", "ORMApi\ORMApi.csproj", "{DA686DFA-1506-4EBE-8366-6462867F20ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{196127E6-2D74-42E9-89FF-51AA40843F9B}"
+	ProjectSection(SolutionItems) = preProject
+		Roadmap.txt = Roadmap.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
